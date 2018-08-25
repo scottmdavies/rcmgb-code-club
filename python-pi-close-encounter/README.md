@@ -1,16 +1,10 @@
 # Close Encounter
 
-Script for a RaspberryPi that sends signal to Pimorni Blinkt! LEDs and synth keys to SonicPi via python-sonic
+Python script for a RaspberryPi that controls Pimorni Blinkt! LEDs and synth keys in SonicPi 
 
 # Background
 
-## Python-Sonic
-
-Send signals to open SonicPi via OSC messages
-
-https://github.com/gkvoelkl/python-sonic 
-
-## Famous Keyboard Sequence
+## Famous Keyboard Sound and Light Sequence
 
 ```
  Start with the tone. (Pinkish-red) - G, 67
@@ -21,15 +15,18 @@ https://github.com/gkvoelkl/python-sonic
 ```
 http://www.johnloomis.org/ece303L/notes/music/Close_Encounters.html
 
-Used to assign Blinkt! LED colours and SonicPi synth keys
+Information used to determine Blinkt! LED colours and SonicPi synth keys
 
+## Python-Sonic
 
+Send signals to open SonicPi via OSC messages
+
+https://github.com/gkvoelkl/python-sonic 
 
 
 # Required
 
-+ RaspberryPi
-+ SonicPi
++ RaspberryPi with SonicPi
 + Pimoroni Blinkt!
 
 # Python Project Setup
