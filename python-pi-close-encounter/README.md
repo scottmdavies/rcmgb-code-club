@@ -45,6 +45,24 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
+
+```
+
+# Open SonicPi
+
+In SonicPi Preferences:
++ Tick Enable OSC server
++ Tick Receive remote OSC messages
+
+# Check RaspberryPi Sound
+
++ Click Volume icon in task bar and check the Audio output: Analog (3.5mm Headphone jack) or HDMI
++ Adjust volume
+
+# Run script
+
+```bash
+
 python3 close_encounter.py
 
 ```

@@ -33,10 +33,9 @@ def show_led(led_num, led_colour, delay):
 notes = [psonic.G4,psonic.A4,psonic.F4,psonic.F3,psonic.C4]
 
 # limited by the 8 pixels so mapping synth notes to index
-```
-FXCDEFGA
-01234567
-```
+# FXCDEFGA
+# 01234567
+
 order = [6,7,5,0,2]
 
 # overall loop
