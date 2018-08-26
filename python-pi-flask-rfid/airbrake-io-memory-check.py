@@ -86,7 +86,8 @@ def print_memory_usage():
 
     :return: None
     """
-    total, available, percent, used, free = psutil.virtual_memory()
+    # option for function returning more items[2:4] slice, or *var_name
+    total, available, percent, used, free, *others = psutil.virtual_memory()
     total, available, used, free = total / MEGA, available / MEGA, used / MEGA, free / MEGA
     proc = PROCESS.memory_info()[1] / MEGA
     print('process = %s total = %s available = %s used = %s free = %s percent = %s'
