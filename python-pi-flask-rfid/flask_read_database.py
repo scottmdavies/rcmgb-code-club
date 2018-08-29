@@ -23,8 +23,7 @@ def get_page(page_id):
 		}	
 	else:
 		response = {
-			"status" : "error",
-			"description" : "Page not found"
+			"error" : "page not found"
 		}
 
 

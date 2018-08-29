@@ -24,9 +24,9 @@ def scan_card():
 			
 		except:
 			
-			return {"text": "cannot read ndef_data", "status":"error"}	
+			return {"error": "cannot read ndef_data"}	
 		
 			
 	except nxppy.SelectError:
 		# SelectError is raised if no card is in the field.
-		return {"text": "card not found", "status":"error"}
+		return {"error": "card not found"}
