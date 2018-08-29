@@ -34,7 +34,7 @@ request.onload = function () {
     console.log(data.text);
 	const p = document.createElement('p')
 	p.textContent = data.text;
-
+	get_page(data.text)
 	container.appendChild(p); 
 	} else {
 	const errorMessage = document.createElement('p');
@@ -46,5 +46,46 @@ request.onload = function () {
 request.send();
 }
 
+
+function get_page(page_id) {
+var request = new XMLHttpRequest();
+
+page_url = '/page/'+ page_id
+console.log(page_url);
+
+request.open('GET', page_url, true);
+request.onload = function () {
+
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response);
+
+  if (request.status >= 200 && request.status < 400) {
+    console.log(data.description);
+	const h1 = document.createElement('h1')
+
+	h1.textContent = data.title;
+
+	const p = document.createElement('p')
+
+	p.textContent = data.description;
+	
+	const img = document.createElement('img')
+
+	img.src = data.image_url;
+
+	container.appendChild(h1);
+	container.appendChild(p);
+	container.appendChild(img);
+	
+
+	} else {
+	const errorMessage = document.createElement('p');
+    errorMessage.textContent = data.error;
+    container.appendChild(p);
+  }
+}
+
+request.send();
+}
 
 //clearInterval(id)
