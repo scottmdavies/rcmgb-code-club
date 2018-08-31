@@ -1,3 +1,10 @@
+#!venv/bin python
+# -*- coding: utf-8 -*-
+
+""" 
+Using SQLite3 database to store radio equipment information. Returns json for Flask API. 
+"""
+
 import sqlite3
 
 db = "test.db"
@@ -29,3 +36,10 @@ def get_page(page_id):
 
 	return response
 	conn.close()
+
+if __name__ == "__main__":
+	# query database when run as file not a module
+	while True:
+		page_id = input("Enter Page_id: ")
+		response = get_page(page_id)
+		print(response)
