@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "instascan": "^1.0.0",
     "qrious": "^4.0.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
