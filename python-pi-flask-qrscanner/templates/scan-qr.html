@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="../static/js/instascan.min.js"></script>
+    <link rel="stylesheet" href="../static/css/qr-scanner.css">
+
+  </head>
+  <body>
+    <div class="center">
+    <h1>Scan a QR Code using the video camera</h1>
+    <video id="preview"></video>
+    <h2 id="scannedQRcode"></h2>
+   <button onclick="displayPage()">Go to Page</button>
+    
+    </div>
+    <script type="text/javascript">
+      var QRcode = "";
+      var CameraNumber = 1;
+
+       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+	QRcode = content;
+	showQRcode(QRcode);
+      });
+      
+       Instascan.Camera.getCameras().then(function (cameras) {
+        console.log("Cameras detected: " + cameras.length);
+	if (cameras.length > 0) {
+          scanner.start(cameras[CameraNumber]); // 0 front facing, 1 for reverse
+        } else {
+          console.error('No cameras found.');
+	  document.getElementById('scannedQRcode').innerHTML='No cameras found.';
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+      
+      function showQRcode(QRcode) {
+        document.getElementById('scannedQRcode').innerHTML=QRcode;
+      }
+      
+      function displayPage() {
+        console.log(QRcode);
+        window.location.href = QRcode;
+      }
+
+      
+    </script>
+  </body>
+</html>
