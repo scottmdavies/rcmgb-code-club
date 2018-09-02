@@ -31,13 +31,14 @@ https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-p
 ```bash
 git clone <this repo>
 cd <this repo>
-npm install
 virtualenv venv --python=python3
 pip install -r requirements.txt
 source venv/bin/activate
 python3 server.py
 
 ```
+
+visit ```https://<server-ip>:8080``` and in Chrome click <advanced> and ```proceed (unsafe)```
 
 ## Complete Build Guide
 
