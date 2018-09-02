@@ -1,0 +1,15 @@
+{
+  "name": "python-pi-flask-qrscanner",
+  "version": "1.0.0",
+  "description": "install npm package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "instascan": "^1.0.0",
+    "qrious": "^4.0.2"
+  }
+}
