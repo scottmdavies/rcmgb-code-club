@@ -4,7 +4,7 @@
 ## Summary
 
 + Use mobile phone or tablet to scan QR code
-+ QR Code could be printed on business card or on an e-ink display
++ QR Code could be printed on business cards or on an e-ink display
 + Mobile phone or tablet with camera connects to museum Wifi
 + Redirect to RaspberryPi server, alternatively turn RPi into a hotspot
 + Server hosts JS for QR Scanner and handles routing of QR data to fetch database items
@@ -30,9 +30,11 @@ https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-p
 
 ```bash
 git clone <this repo>
+cd <this repo>
+npm install
 virtualenv venv --python=python3
 pip install -r requirements.txt
-source venv/bin activate
+source venv/bin/activate
 python3 server.py
 
 ```
