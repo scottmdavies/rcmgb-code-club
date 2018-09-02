@@ -38,7 +38,7 @@ python3 server.py
 
 ```
 
-visit ```https://<server-ip>:8080``` and in Chrome click <advanced> and ```proceed (unsafe)```
+visit ```https://<server-ip>:8080``` and in Chrome click ```<Advanced>``` and ```proceed (unsafe)```
 
 ## Complete Build Guide
 
