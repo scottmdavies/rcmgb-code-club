@@ -9,39 +9,43 @@
     <div class="center">
     <h1>Scan a QR Code using the video camera</h1>
     <video id="preview"></video>
-    <p id="scannedQRcode">
-    </p>
+    <h2 id="scannedQRcode"></h2>
    <button onclick="displayPage()">Go to Page</button>
     
     </div>
     <script type="text/javascript">
       var QRcode = "";
-      
-      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      var CameraNumber = 1;
+
+       let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
       scanner.addListener('scan', function (content) {
         console.log(content);
-        showQRcode(content);
-        QRcode = content;
+	QRcode = content;
+	showQRcode(QRcode);
       });
       
-      Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-          scanner.start(cameras[0]);
+       Instascan.Camera.getCameras().then(function (cameras) {
+        console.log("Cameras detected: " + cameras.length);
+	if (cameras.length > 0) {
+          scanner.start(cameras[CameraNumber]); // 0 front facing, 1 for reverse
         } else {
           console.error('No cameras found.');
+	  document.getElementById('scannedQRcode').innerHTML='No cameras found.';
         }
       }).catch(function (e) {
         console.error(e);
       });
       
-      function showQRcode(content) {
-        document.getElementById('scannedQRcode').innerHTML=content;
+      function showQRcode(QRcode) {
+        document.getElementById('scannedQRcode').innerHTML=QRcode;
       }
       
       function displayPage() {
         console.log(QRcode);
         window.location.href = QRcode;
       }
+
+      
     </script>
   </body>
 </html>
