@@ -23,10 +23,10 @@ Note HTTPS required for accessing Camera through Chrome
 ```bash
 git clone <repo>
 
-virtualenv venv
+virtualenv venv --python=python3
 pip install -r requirements.txt
 source venv/bin activate
-python server.py
+python3 server.py
 
 ```
 
